@@ -1,0 +1,37 @@
+<div class="panel">
+  <small><i>You can pass dynamic content from parent to child component</i></small>
+  <con-child>1st injected content</con-child>
+
+  <small><i>You can access elements in dynamic content which passed from parent to child component</i></small>
+  <con-child2>2nd injected content from parent<span style="padding: 3px" #pushedContentRef><button>CONTENT PUSHED FROM PARENT</button></span></con-child2>
+
+  <con-child>
+    <h5>3rd injected content</h5>
+    <ul>
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>Nulla volutpat aliquam velit
+        <ul>
+          <li>Phasellus iaculis neque</li>
+          <li>Ac tristique libero volutpat at</li>
+        </ul>
+      </li>
+      <li>Faucibus porta lacus fringilla vel</li>
+      <li>Eget porttitor lorem</li>
+    </ul>
+  </con-child>
+</div>
+
+<div class="panel mt-2">
+  <con-child3>
+    <button #projectedContent>This is also a projected content!</button>
+  </con-child3>
+</div>
+
+<div class="panel mt-2">
+  <ng-template #customTemplate let-data="data">
+    <h5 style="background-color: #73AD21">{{ data.message }}</h5>
+  </ng-template>
+
+  <con-child4 [content]="customTemplate"></con-child4>
+</div>
+

@@ -1,0 +1,53 @@
+<div class="container mt-2">
+  <app-page-header title="Context menu" description="ngx-context-menu: 3rd-party library. Click on the rows of the tabler with Right-click to call context manu."></app-page-header>
+
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Sex</th>
+      <th>Active</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of persons" (contextmenu)="onContextMenu($event, p)">
+      <td>{{p.name}}</td>
+      <td>{{p.email}}</td>
+      <td>{{p.gender}}</td>
+      <td>{{p.active}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <!-- directive reference the <context-menu> component via the #oneContextMenu template variable -->
+  <!--
+  <div class="card">
+    <span class="text-center" [contextMenu]="oneContextMenu" [contextMenuValue]="value">You can right click on this text</span>
+  </div>
+  -->
+
+  <!-- component declares itself via the #oneContextMenu template variable -->
+  <context-menu #oneContextMenu>
+    <!-- each menu item is a <ng-template>... -->
+    <ng-template contextMenuItem [passive]="true">
+      <!-- ...that can contain any HTML with specific styling -->
+      <span class="menu-item-title">Context menu title</span>
+    </ng-template>
+    <!-- ...not the `let-value` to access the context menu value inside the template -->
+    <ng-template contextMenuItem [passive]="true" let-value>This is the context menu value: [{{ value | json }}]</ng-template>
+
+    <!-- ...or just text, the (execute) output is called when the menu item is clicked -->
+    <ng-template contextMenuItem let-value [visible]="onlyMenVisible">ONLY FOR MEN: {{value | json}}</ng-template>
+    <ng-template contextMenuItem (execute)="execute('Cut', $event.value)" let-value>
+      <i class="fas fa-phone text-success menuicon"></i> Cut [{{ value | json }}]
+    </ng-template>
+    <ng-template contextMenuItem (execute)="execute('Cut', $event.value)" let-value>
+      <span><i class="fas fa-phone text-success menuicon"></i> Cica</span>
+    </ng-template>
+    <ng-template contextMenuItem (execute)="execute('Copy', $event.value)" let-value>Copy {{ value | json }}</ng-template>
+    <ng-template contextMenuItem (execute)="execute('Paste', $event.value)" let-value>Paste {{ value | json }}</ng-template>
+    <ng-template contextMenuItem [disabled]="true">Disabled menu item</ng-template>
+  </context-menu>
+
+</div>
+

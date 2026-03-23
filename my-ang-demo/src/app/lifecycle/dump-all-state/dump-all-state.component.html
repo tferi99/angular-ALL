@@ -1,0 +1,32 @@
+<div style="border: solid 1px dodgerblue; padding: 10px">
+  <h5>DumpAllStateComponent</h5>
+  <div class="my-3" style="font-style: italic">Lifecycle hooks dumped to console</div>
+  <h6>Input number+text</h6>
+  <table class="table">
+    <tr>
+    <tr>
+      <th>testText</th>
+      <th>testNumber</th>
+    </tr>
+    <tr>
+      <td>{{testText}}</td>
+      <td>{{testNumber}}</td>
+    </tr>
+  </table>
+  <hr>
+
+  <h6>Form with input text</h6>
+  <div class="my-3" style="font-style: italic">Changing input property won't trigger ngOnChanges</div>
+  <form>
+    <div class="form-group">
+      <label>testText</label>
+      <input type="text" class="form-control" name="testText" id="testText" [value]="testText" #testTextRef>
+    </div>
+    <button class="btn btn-primary" (click)="onSetTestText(testTextRef.value)">OK</button>
+  </form>
+
+  <hr>
+  <h5>Input object</h5>
+  {{testObject?.name}}
+</div>
+

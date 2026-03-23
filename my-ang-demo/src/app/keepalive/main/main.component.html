@@ -1,0 +1,22 @@
+<div class="container mt-2">
+  <app-page-header title="Keep-alive/Idle"></app-page-header>
+
+  <table>
+    <tr>
+      <td>Idle time:</td>
+      <td>{{idleTime}}</td>
+    </tr>
+    <tr>
+      <td>Idle timeout:</td>
+      <td>{{idleTimeout}}</td>
+    </tr>
+  </table>
+
+  <i><small>Just move mouse or click to interrupt idle.</small></i>
+
+  <hr>
+  <p>Status: <strong>{{idleState}}</strong></p>
+  <p *ngIf="lastPing"><small>Last keepalive ping <strong>{{lastPing | amDateFormat:'MMMM Do YYYY, h:mm:ss a'}}</strong></small></p>
+  <button class="btn btn-primary" (click)="reset()" *ngIf="timedOut">Restart</button>
+
+</div>

@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@app/my-ang-demo2-lib/(.*)": "<rootDir>/../libs/my-ang-demo2-lib/src/$1",
+    "@app/my-ang-demo2-lib": "<rootDir>/../libs/my-ang-demo2-lib/src"
+  }
+}

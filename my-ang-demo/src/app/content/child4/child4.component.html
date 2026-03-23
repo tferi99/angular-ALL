@@ -1,0 +1,8 @@
+<div class="container">
+  <h3>Welcome in child 4, who can push data into parent template</h3>
+  <ng-container *ngIf="content; else defaultTemplate" [ngTemplateOutlet]="content" [ngTemplateOutletContext]="{ data: templateData }"></ng-container>
+
+  <ng-template #defaultTemplate>
+    <p>This is default data</p>
+  </ng-template>
+</div>

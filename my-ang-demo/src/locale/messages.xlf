@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US">
+  <file id="ngi18n" original="ng.template">
+    <unit id="6947830843539421219">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:4</note>
+        <note category="description">i18n main component header</note>
+      </notes>
+      <segment>
+        <source>Hello World!</source>
+      </segment>
+    </unit>
+    <unit id="5822111573707261307">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:5</note>
+      </notes>
+      <segment>
+        <source>Current locale: <ph id="0" equiv="INTERPOLATION" disp="{{locale}}"/></source>
+      </segment>
+    </unit>
+    <unit id="1629426416391325034">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Now: <ph id="0" equiv="INTERPOLATION" disp="{{now | date: &apos;short&apos;}}"/></source>
+      </segment>
+    </unit>
+    <unit id="5744940780535970762">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:14</note>
+        <note category="description">i18n demo description</note>
+      </notes>
+      <segment>
+        <source>This is the description text for i18n demo</source>
+      </segment>
+    </unit>
+    <unit id="3512626523818773850">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:18</note>
+      </notes>
+      <segment>
+        <source>row</source>
+      </segment>
+    </unit>
+    <unit id="1358139825663854973">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:20</note>
+      </notes>
+      <segment>
+        <source>This is YES button</source>
+      </segment>
+    </unit>
+    <unit id="yesButton">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:20</note>
+        <note category="location">src/app/i18n/main/main.component.html:27</note>
+      </notes>
+      <segment>
+        <source>Yes</source>
+      </segment>
+    </unit>
+    <unit id="2439809159657033164">
+      <notes>
+        <note category="location">src/app/i18n/main/main.component.html:25</note>
+      </notes>
+      <segment>
+        <source>this is also a row</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>

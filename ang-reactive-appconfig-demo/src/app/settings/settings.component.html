@@ -1,0 +1,12 @@
+<div style="text-align: center">
+  <table *ngIf="(getAppConfig() | async) as appConfig">
+    <tr>
+      <td>Color</td>
+      <td><input type="number" [ngModel]="appConfig.color" (ngModelChange)="changeColor($event, appConfig)"></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input type="text" [ngModel]="appConfig.description" (ngModelChange)="changeDescription($event, appConfig)"></td>
+    </tr>
+  </table>
+</div>

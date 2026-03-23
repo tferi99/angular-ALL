@@ -1,0 +1,9 @@
+<h1>Reactive application settings demo</h1>
+<hr>
+<h3 *ngIf="(getAppConfig() | async) as appConfig">FROM CONFIG - Color: {{appConfig.color}} | Description: {{appConfig.description}}</h3>
+<hr>
+<span>MENU - </span>
+<a class="menuItem" routerLink="home">Home</a>
+<a class="menuItem" routerLink="settings">Settings</a>
+<hr>
+<router-outlet></router-outlet>

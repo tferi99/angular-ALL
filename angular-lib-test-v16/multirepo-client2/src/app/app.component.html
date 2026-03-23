@@ -1,0 +1,18 @@
+<h1>{{ title }} <small>(Angular {{ version.full }})</small></h1>
+
+<lib-my-lib></lib-my-lib>
+
+<h2>Value from lib service: {{valueFromLib}}</h2>
+<h2>Counter from lib: {{$counter | async}}</h2>
+
+<p></p>
+
+<lib-sizer [id]="0" [(size)]="fontSizePx"></lib-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
+
+<p></p>
+
+<lib-emitter [id]="0" (onEmit)="onEmit($event)"></lib-emitter>
+
+<h3>UUID from lib: {{uuid}}</h3>
+<h3>'{{ testString }}' with custom pipe: {{testString | custom}}</h3>

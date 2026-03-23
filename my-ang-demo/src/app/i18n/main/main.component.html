@@ -1,0 +1,33 @@
+<div class="container mt-2">
+  <app-page-header title="i18n - official internationalization of Angular"></app-page-header>
+
+  <h1 i18n="i18n main component header">Hello World!</h1>
+  <h4 i18n>Current locale: {{locale}}</h4>
+  <h4 i18n>Now: {{now | date: 'short'}}</h4>
+
+  <div class="m-2" *ngIf="locale != 'hu'" style="color: red">
+    <small><i>
+      To translate this page to HU you have to start app with start:hu
+    </i></small>
+  </div>
+
+  <div i18n="i18n demo description">This is the description text for i18n demo</div>
+
+  <table class="table">
+    <tr>
+      <td><span i18n>row</span> A</td>
+      <td>
+        <button class="btn btn-success mr-2" i18n="@@yesButton" title="This is YES button" i18n-title>Yes</button>
+        <button class="btn btn-danger mr-2">No</button>
+      </td>
+    </tr>
+    <tr>
+      <td><span i18n>this is also a row</span> B</td>
+      <td>
+        <button class="btn btn-success mr-2" i18n="@@yesButton">Yes</button>
+        <button class="btn btn-danger mr-2">No</button>
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="container mt-2">
+  <app-page-header title="Templating" description="Demo for Andular templating features ()"></app-page-header>
+
+  <h6>ng-template & TemplateRef using the ngTemplateOutlet</h6>
+  <ng-container *ngTemplateOutlet="sayHelloTemplate">
+    This text is not displayed
+  </ng-container>
+ <ng-template #sayHelloTemplate>
+    <p>Say Hello from 'ng-template'</p>
+  </ng-template>
+
+  <p></p>
+
+  <h6>Multi-slot content projection</h6>
+  <app-my-panel>
+    This is the content
+    <span header>This is the header</span>
+    <span footer>This is the footer</span>
+  </app-my-panel>
+
+  <p></p>
+
+  <app-my-yellow-child>pushedContent colorized<span style="padding: 3px" #pushedContent>PUSHED CONTENT</span></app-my-yellow-child>
+
+  <p></p>
+
+  <app-render-my-child>
+    Neither his text won't be rendered because 'app-render-my-child' only renders content in 'ng-template'
+    <ng-template>
+      <app-my-yellow-child>cicuska</app-my-yellow-child>
+    </ng-template>
+    nor this text
+  </app-render-my-child>
+
+  <p></p>
+  <app-render-my-child>
+    <ng-template>
+      <div #templateRef>This content is a template</div>
+    </ng-template>
+  </app-render-my-child>
+</div>
+

@@ -1,0 +1,44 @@
+<div class="container mt-2">
+  <app-page-header title="2-way data bind" description="Drag&amp;Drop demo"></app-page-header>
+
+  <!--
+  -->
+  <fieldset class="mb-5">
+    <legend>Simple</legend>
+    <div class="mb-2">
+      <small><i>Drag&amp;Drop directly (without any service)</i></small>
+    </div>
+
+    <dd-drag-drop-simple-demo></dd-drag-drop-simple-demo>
+  </fieldset>
+  <hr>
+
+  <!--
+  -->
+  <fieldset class="mb-5">
+    <legend>Simple + service</legend>
+    <div class="mb-2">
+      <small><i>Drag&amp;Drop + event handler service</i></small>
+    </div>
+
+    <dd-drag-drop-simple-with-service-demo dragZoneId="SimpleWithService-Drag" dropZoneId="SimpleWithService-Drop"></dd-drag-drop-simple-with-service-demo>
+  </fieldset>
+  <hr>
+
+  <!--
+  -->
+  <fieldset class="mb-5">
+    <legend>List</legend>
+    <dd-drag-drop-list-demo></dd-drag-drop-list-demo>
+  </fieldset>
+  <hr>
+
+  <!--
+  -->
+  <fieldset class="mb-5">
+    <legend>List DYNAMIC</legend>
+    <dd-drag-drop-list-dynamic-demo></dd-drag-drop-list-dynamic-demo>
+  </fieldset>
+  <hr>
+
+</div>
