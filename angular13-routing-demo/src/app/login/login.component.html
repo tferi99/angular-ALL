@@ -1,0 +1,47 @@
+<div style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+  <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 400px;">
+    <h2>Login</h2>
+
+    <form (ngSubmit)="onLogin()" style="display: flex; flex-direction: column; gap: 1rem;">
+      <div>
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="Enter username"
+          required
+          style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"
+        />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Enter password"
+          required
+          style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"
+        />
+      </div>
+
+      <div *ngIf="errorMessage" style="color: #d32f2f; font-size: 0.875rem; padding: 0.5rem; background: #ffebee; border-radius: 4px;">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" [disabled]="isLoading" class="btn">{{ isLoading ? 'Logging in...' : 'Login' }}</button>
+    </form>
+
+    <p style="margin-top: 1rem; font-size: 0.875rem; color: #666;">
+      <strong>Demo credentials:</strong><br>
+      Username: {{ VALID_USERNAME }}<br>
+      Password: {{ VALID_PASSWORD }}
+    </p>
+    <app-dump-query-params></app-dump-query-params>
+  </div>
+</div>
+

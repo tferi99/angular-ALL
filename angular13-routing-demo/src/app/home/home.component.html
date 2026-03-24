@@ -1,9 +1,9 @@
-<div [ngStyle]="{'background-color': bgColor}" style="height: 100vh;">
+<div style="height: 100vh;">
   <h1>Home Component</h1>
-  <h5>LocationStrategy: {{locationStrategy}}</h5>
+  <h5>LocationStrategy: {{routerHelperService.locationStrategy}}</h5>
 
-  <p>Background color: {{ bgColor }}</p>
+  <p>Background color: {{ bgColorFromParam }}</p>
+  <app-dump-query-params></app-dump-query-params>
 </div>
 
-<button (click)="extractForHash()">Extract for Hash</button>
-<button (click)="extractForAllStrtegies()">Extract for All</button>
+
