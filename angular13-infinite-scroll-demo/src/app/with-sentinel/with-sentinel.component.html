@@ -1,0 +1,13 @@
+<div class="infinite-page">
+  <h3>With sentinel observer</h3>
+  <div #scrollContainer class="scroll-container" [class.loading]="loading">
+    <div class="scroll-content">
+      <div class="item" *ngFor="let item of data; trackBy: trackByValue">
+        Item #{{ item }}
+      </div>
+      <div #sentinel class="scroll-sentinel" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="status-line"><span>Pages fetched: {{lastPageIdx}} | Fetched items: {{ data.length }} | {{ statusMessage }}</span> <button (click)="dumpIsSentinelCurrentlyVisible()">Sentinel visible?</button></div>
+</div>

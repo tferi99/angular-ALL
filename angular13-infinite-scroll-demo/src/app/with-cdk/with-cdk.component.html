@@ -1,0 +1,13 @@
+<div class="infinite-page">
+  <h3>With CDK</h3>
+
+  <cdk-virtual-scroll-viewport itemSize="50" class="viewport" [class.loading]="loading" (scrolledIndexChange)="onScroll($event)">
+    <div *cdkVirtualFor="let item of data; trackBy: trackByValue" class="item">
+      Item #{{ item }}
+    </div>
+  </cdk-virtual-scroll-viewport>
+
+  <div class="status-line">
+    <span>Pages fetched: {{lastPageIdx}} | Fetched items: {{ data.length }} | {{ statusMessage }}</span>
+  </div>
+</div>

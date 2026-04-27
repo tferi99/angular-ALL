@@ -50,7 +50,7 @@ export class LoginComponent extends ColorQueryParamComponent implements OnInit {
       const success = this.authService.login(this.username, this.password);
 
       if (success) {
-        this.routerHelperService.redirectWithCurrentQueryParams(this.targetUrl);
+        this.routerHelperService.redirectWithCurrentQueryParams(this.targetUrl, [AUTH_TARGET_URL_PARAM]);
       } else {
         this.errorMessage = this.authService.lastErrorMessage;
         this.isLoading = false;

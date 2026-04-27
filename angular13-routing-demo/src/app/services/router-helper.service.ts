@@ -34,8 +34,23 @@ export class RouterHelperService {
     console.log('============================================================================');
   }
 
-  redirectWithCurrentQueryParams(targetPath: string) {
-    const queryParams = this.route.snapshot.queryParams;
+  /**
+   * Redirects to the given path, preserving the current query parameters.
+   * You can remove specific query parameters by passing them in the `removeQueryParams`.
+   *
+   * @param targetPath
+   * @param removeQueryParams
+   */
+  redirectWithCurrentQueryParams(targetPath: string, removeQueryParams?: string[]) {
+    let queryParams = this.route.snapshot.queryParams;
+
+    // removing the specified query parameters
+    if (removeQueryParams) {
+      // Clone snapshot params so we never mutate Angular's internal route state object.
+      queryParams = { ...this.route.snapshot.queryParams };
+      removeQueryParams.forEach(param => delete queryParams[param]);
+    }
+
     console.log(`>>> redirectWithCurrentQueryParams(${targetPath}) queryParams:`, queryParams);
     this.router.navigate([targetPath], {
       queryParams

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular13-demo": {
+    "angular13-infinite-scroll-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular13-demo",
+            "outputPath": "dist/angular13-infinite-scroll-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,16 +69,13 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "options": {
-            "port": 4210
-          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular13-demo:build:production"
+              "browserTarget": "angular13-infinite-scroll-demo:build:production"
             },
             "development": {
-              "browserTarget": "angular13-demo:build:development"
+              "browserTarget": "angular13-infinite-scroll-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular13-demo:build"
+            "browserTarget": "angular13-infinite-scroll-demo:build"
           }
         },
         "test": {
@@ -110,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "angular13-demo"
+  "defaultProject": "angular13-infinite-scroll-demo"
 }
